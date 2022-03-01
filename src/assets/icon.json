@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "clear sky": "https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-sun-weather-justicon-flat-justicon-1.png"
+  },
+  {
+    "id": 2,
+    "few clouds": "https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-cloud-weather-justicon-flat-justicon-1.png"
+  },
+  {
+    "id": 3,
+    "scattered clouds": "https://img.icons8.com/external-flat-icons-inmotus-design/67/000000/external-clouds-day-and-night-flat-icons-inmotus-design.png"
+  },
+  {
+    "id": 4,
+    "broken clouds": "https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-cloud-weather-justicon-flat-justicon-2.png"
+  },
+  {
+    "id": 5,
+    "shower rain": "https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-shower-weather-justicon-flat-justicon.png"
+  },
+  {
+    "id": 6,
+    "light rain": "https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-rainy-weather-justicon-flat-justicon.png"
+  },
+  {
+    "id": 7,
+    "thunderstorm": "https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-thunderstorm-weather-justicon-flat-justicon.png"
+  },
+  {
+    "id": 8,
+    "snow": "https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-snow-weather-justicon-flat-justicon.png"
+  },
+  {
+    "id": 9,
+    "mist": "https://img.icons8.com/color/50/000000/fog-day--v1.png"
+  },
+
+  {
+    "id": 10,
+    "overcast clouds": "https://img.icons8.com/external-phatplus-lineal-color-phatplus/64/000000/external-overcast-weather-phatplus-lineal-color-phatplus.png"
+  }
+]

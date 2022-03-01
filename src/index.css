@@ -1,0 +1,249 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+}
+button {
+  cursor: pointer;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+main {
+  display: flex;
+  width: 100%;
+}
+.left,
+.right {
+  min-height: 100vh;
+}
+
+.left {
+  background-color: #1e213a;
+  position: relative;
+  overflow: hidden;
+  width: 30%;
+}
+.right {
+  width: 70%;
+}
+.left::before {
+  position: absolute;
+  content: "";
+  width: 150%;
+  height: 120%;
+  background-image: url(./assets/Cloud-background.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 8rem;
+  left: -5rem;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.left-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.left *,
+.right * {
+  color: #fff;
+}
+.btn-search {
+  width: 8rem;
+  height: 2rem;
+  background: #6e707a;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: none;
+}
+.btn-location {
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.left-body {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+  flex-direction: column;
+}
+.left-body img {
+  width: 50%;
+  height: auto;
+  margin: auto;
+}
+.temp {
+  font-weight: 500;
+  font-size: 5.5rem;
+  line-height: 169px;
+  padding: 0 5rem;
+}
+
+.temp span {
+  font-size: 2rem;
+  color: #807f93;
+}
+.weather-state,
+.date,
+.location {
+  margin: 0.5rem 0;
+  text-align: center;
+  color: #807f93;
+}
+.location span {
+  color: #807f93;
+  font-size: 0.85rem;
+}
+.right {
+  background-color: #100e1d;
+  display: grid;
+}
+
+.times-days,
+.card-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  padding: 2rem 8rem 2rem 8rem;
+  gap: 1rem;
+}
+.card-time {
+  background-color: #1e213a;
+  padding: 1rem;
+  display: grid;
+}
+.card-time figure {
+  display: grid;
+  justify-items: center;
+}
+.card-time figure img {
+  width: 50%;
+}
+.card-time div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  /* margin-top: 2rem; */
+  align-self: flex-end;
+}
+.card-time div span:nth-child(2n) {
+  color: #a09fb1;
+}
+.card-info {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding-top: 1rem;
+}
+.card-info article {
+  background-color: #1e213a;
+  padding: 1rem 2rem;
+  display: grid;
+  justify-content: center;
+}
+.card-info article p,
+.card-info article span {
+  display: flex;
+  align-items: center;
+  margin: 0.25rem 0;
+  margin-right: 0.25rem;
+}
+.card-info .info-number {
+  display: flex;
+  align-items: center;
+  font-size: 64px;
+  line-height: 3rem;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 0.85rem;
+  line-height: 19px;
+  text-align: center;
+  color: #ccc;
+}
+h2 {
+  padding: 0 8rem;
+  font-size: 1.2rem;
+}
+
+footer {
+  align-self: flex-end;
+  text-align: center;
+}
+
+.form-search {
+  background-color: #1e213a;
+  min-height: 100vh;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-close {
+  align-self: flex-end;
+  margin: 1rem;
+}
+.form-search form {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.form-search form div {
+  display: flex;
+  border: thin solid #ccc;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  width: 80%;
+  min-width: 10rem;
+}
+
+#search::placeholder,
+.form-search form div span {
+  color: #ccc;
+}
+.form-search form div input,
+.form-search .btn-close {
+  background-color: transparent;
+  border: none;
+  padding: 0.25rem;
+  outline: none;
+  color: #fff;
+}
+.form-search form input {
+  padding: 0.25rem 1rem;
+  background-color: #3c47e9;
+  border: none;
+  color: #fff;
+  border-radius: 0.25rem;
+}
+@media screen and (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+  .left,
+  .right,
+  .form-search {
+    width: 100%;
+  }
+  .times-days {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  .times-days,
+  .card-info {
+    padding: 2rem;
+  }
+}

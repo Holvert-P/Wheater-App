@@ -42,7 +42,11 @@ const ContainerRigth = ({ days, images, tempMin, tempMax, currentData }) => {
             <h3>Visibility</h3>
             <p>
               <span className="info-number">
-                {currentData !== null ? currentData.visibility : ""}
+                {currentData !== null
+                  ? new Intl.NumberFormat("en-Us").format(
+                      currentData.visibility
+                    )
+                  : ""}
               </span>
               meter
             </p>
@@ -51,7 +55,11 @@ const ContainerRigth = ({ days, images, tempMin, tempMax, currentData }) => {
             <h3>Air Pressure</h3>
             <p>
               <span className="info-number">
-                {currentData !== null ? currentData.main.pressure : ""}
+                {currentData !== null
+                  ? new Intl.NumberFormat("en-Us").format(
+                      currentData.main.pressure
+                    )
+                  : ""}
               </span>
               mb
             </p>

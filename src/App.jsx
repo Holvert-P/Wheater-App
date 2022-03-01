@@ -19,31 +19,40 @@ const App = () => {
   }, [url]);
 
   const handleLocation = (url = "http://api.openweathermap.org/data/2.5/") => {
-    if (navigator.permissions) {
-      navigator.geolocation.getCurrentPosition((item) => {
-        let { latitude, longitude } = item.coords,
-          endpoint = `${url}forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=720ecc632ab33b0ac5e805778e388428`;
-        helpHttp()
-          .get(endpoint)
-          .then((res) => {
-            if (!res.err) {
-              helpHttp()
-                .get(
-                  `${url}weather?q=${res.city.name}&appid=720ecc632ab33b0ac5e805778e388428`
-                )
-                .then((res) => {
-                  if (!res.err) {
-                    setCurrentData(res);
-                    setCurrentImage(res.weather[0].description);
-                  } else {
-                    setCurrentData(null);
-                  }
-                });
-              setCity(res.city);
-              setList(res.list);
-            }
-          });
-      });
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (item) => {
+          alert("hay");
+          let { latitude, longitude } = item.coords,
+            endpoint = `${url}forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=720ecc632ab33b0ac5e805778e388428`;
+          helpHttp()
+            .get(endpoint)
+            .then((res) => {
+              if (!res.err) {
+                helpHttp()
+                  .get(
+                    `${url}weather?q=${res.city.name}&appid=720ecc632ab33b0ac5e805778e388428`
+                  )
+                  .then((res) => {
+                    if (!res.err) {
+                      setCurrentData(res);
+                      setCurrentImage(res.weather[0].description);
+                    } else {
+                      setCurrentData(null);
+                    }
+                  });
+                setCity(res.city);
+                setList(res.list);
+              }
+            });
+        },
+        (e) => {
+          alert(e);
+        },
+        { enableHighAccuracy: true, maximumAge: 100, timeout: 60000 }
+      );
+    } else {
+      alert("no hay geolocalizacion en este dispositivo");
     }
   };
 

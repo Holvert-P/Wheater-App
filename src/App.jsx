@@ -13,6 +13,8 @@ const App = () => {
   const [city, setCity] = useState({});
   const [list, setList] = useState([]);
   const [currentImage, setCurrentImage] = useState(null);
+  const [btnVisible, setBtnVisible] = useState(false);
+
   let url = "https://api.openweathermap.org/data/2.5/";
   useEffect(() => {
     handleLocation(url);
@@ -109,6 +111,8 @@ const App = () => {
           city={city}
           currentImage={currentImage}
           handleLocation={handleLocation}
+          btnVisible={btnVisible}
+          setBtnVisible={setBtnVisible}
         />
       )}
       {isVisible && (
@@ -116,6 +120,7 @@ const App = () => {
           setIsVisible={setIsVisible}
           isVisible={isVisible}
           handleSubmit={handleSubmit}
+          setBtnVisible={setBtnVisible}
         />
       )}
       <ContainerRigth

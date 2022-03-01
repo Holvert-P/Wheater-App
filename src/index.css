@@ -189,6 +189,7 @@ footer {
   width: 30%;
   display: flex;
   flex-direction: column;
+  min-width: 20rem;
 }
 
 .btn-close {
@@ -207,7 +208,7 @@ footer {
   border: thin solid #ccc;
   padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
-  width: 80%;
+  width: 100%;
   min-width: 10rem;
 }
 
@@ -229,6 +230,9 @@ footer {
   border: none;
   color: #fff;
   border-radius: 0.25rem;
+}
+.form-search form input[type="search"] {
+  width: 100%;
 }
 @media screen and (max-width: 768px) {
   main {

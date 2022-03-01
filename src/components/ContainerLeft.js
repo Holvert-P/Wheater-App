@@ -5,6 +5,8 @@ const ContainerLeft = ({
   city,
   currentImage,
   handleLocation,
+  btnVisible,
+  setBtnVisible,
 }) => {
   let date = new Date().toDateString().slice(0, 10);
 
@@ -19,9 +21,17 @@ const ContainerLeft = ({
         >
           Search for places
         </button>
-        <button className="btn-location" onClick={() => handleLocation()}>
-          <span className="material-icons">my_location</span>
-        </button>
+        {btnVisible && (
+          <button
+            className="btn-location"
+            onClick={() => {
+              handleLocation();
+              setBtnVisible(false);
+            }}
+          >
+            <span className="material-icons">my_location</span>
+          </button>
+        )}
       </article>
       <article className="left-body">
         {icon.map((item, index) =>

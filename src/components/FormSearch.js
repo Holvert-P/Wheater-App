@@ -1,5 +1,10 @@
 import { useState } from "react";
-const FormSearch = ({ setIsVisible, isVisible, handleSubmit }) => {
+const FormSearch = ({
+  setIsVisible,
+  isVisible,
+  handleSubmit,
+  setBtnVisible,
+}) => {
   const [city, setCity] = useState(null);
   return (
     <section className="form-search">
@@ -27,6 +32,7 @@ const FormSearch = ({ setIsVisible, isVisible, handleSubmit }) => {
           onClick={(e) => {
             handleSubmit(e, city);
             setIsVisible(!isVisible);
+            setBtnVisible(true);
           }}
         />
       </form>

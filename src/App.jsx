@@ -13,12 +13,12 @@ const App = () => {
   const [city, setCity] = useState({});
   const [list, setList] = useState([]);
   const [currentImage, setCurrentImage] = useState(null);
-  let url = "http://api.openweathermap.org/data/2.5/";
+  let url = "https://api.openweathermap.org/data/2.5/";
   useEffect(() => {
     handleLocation(url);
   }, [url]);
 
-  const handleLocation = (url = "http://api.openweathermap.org/data/2.5/") => {
+  const handleLocation = (url = "https://api.openweathermap.org/data/2.5/") => {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(
         (item) => {

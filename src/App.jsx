@@ -22,7 +22,6 @@ const App = () => {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(
         (item) => {
-          alert("hay");
           let { latitude, longitude } = item.coords,
             endpoint = `${url}forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=720ecc632ab33b0ac5e805778e388428`;
           helpHttp()
@@ -47,9 +46,9 @@ const App = () => {
             });
         },
         (e) => {
-          alert(e);
+          alert(e.toString());
         },
-        { enableHighAccuracy: true, maximumAge: 100, timeout: 60000 }
+        { enableHighAccuracy: false, maximumAge: 30000, timeout: 20000 }
       );
     } else {
       alert("no hay geolocalizacion en este dispositivo");
